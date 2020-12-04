@@ -13,27 +13,31 @@
 <body>
     
     <div class="container" style="text-align: center;"> <br> <br> <br> <br> <br> <br> <br> <br>
-       <h1>CEP Checker</h1> <br>
+       <h1>CEP Checker  </h1> <br>
 
        <form>
         <div class="form-group">
           <input type="text" maxlength="8" class="form-control" id="inputCEP" aria-describedby="inputCEP">
           <small id="inputCEP" style="text-align: left;" class="form-text text-muted">Informe o CEP que você gostaria de buscar.</small>
         </div>
-        <button type="button" onclick="getAdress()" class="btn btn-primary">Buscar endereço</button>
+        <button type="submit" onclick="stopSubmit(event)" class="btn btn-primary">Buscar <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        </svg> </button>
       </form>
 
     </div>
+
+    <input hidden id = "hiddenElement"></input>
 
         <!-- Modal -->
         <div class="modal fade" id="notFound" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel"><h4>Oops!</h4></h5>
-                  <button type="button" class="close" onclick="cleanDiv()" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" onclick="cleanDiv()">&times;</span>
-                  </button>
+                  <h5 class="modal-title" id="staticBackdropLabel">Oops! <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="red" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg></h5>
                 </div>
                 <div class="modal-body">
                     <p>Nenhum endereço foi encontrado, verifique se o campo do CEP foi preenchido corretamente e tente novamente.</p>
@@ -50,6 +54,7 @@
               <p style="text-align: center;">Desenvolvido por <i style="font-style: normal; font-weight: bold;">Victor Atavila</i></p>
             </footer>
           </div>
+          
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -57,10 +62,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
     <script src="../js/calc.js"></script>
-
-    <script>
-      
-    </script>
     
+    <script>
+
+  // function copyText(){
+  //   var street = $("#adressTable #street").text();
+  //   var state = $("#adressTable #state").text();
+  //   var city = $("#adressTable #city").text();
+  //   var ddd = $("#adressTable #ddd").text();
+  //   var neighbourhood = $("#adressTable #neighbourhood").text();
+
+  //   const fullAdress = ` ${street}  ${neighbourhood}  ${city}  ${state}`;
+  //   var element = document.getElementById('hiddenElement');
+  //   element.innerHTML = `${fullAdress}`;
+  //   element.select();
+  //   document.execCommand('copy');
+  // }
+
+    </script>
+
 </body>
 </html>

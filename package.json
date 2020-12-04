@@ -1,6 +1,6 @@
 {
   "name": "cep_checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Buscador de CEP gratuito",
   "main": "main.js",
   "scripts": {
@@ -12,8 +12,7 @@
     "win": {
       "target": [
         "nsis"
-      ],
-      "requestedExecutionLevel": "requireAdministrator"
+      ]
     },
 
     "directories": {
@@ -29,7 +28,7 @@
     }
   },
   "keywords": [],
-  "author": "victor atavila",
+  "author": "Victor Atavila",
   "license": "ISC",
   "devDependencies": {
     "electron": "^11.0.3",
