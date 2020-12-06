@@ -1,21 +1,22 @@
-const {app, BrowserWindow} = require('electron')
-const ejse = require('ejs-electron')
- 
-let mainWindow
+const {app, BrowserWindow, shell} = require('electron')
+const ejse = require('ejs-electron');
 
-ejse.data('username', 'Some Guy')
- 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({
+    let mainWindow = new BrowserWindow({
       width: 1000,
       height: 700,
       webPreferences: {
         nodeIntegration: true,
-        devTools: false
+        devTools: false,
+        setMenuBarVisibility: false,
+        nativeWindowOpen: true,
+        devToolsNativeWindowOpen: false
       },
       icon: __dirname + '/public/img/icon.png'
     });
 
     mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL('file://' + __dirname + '/public/views/index.ejs');
+    // shell.openExternal('https://github.com');
 })
+
